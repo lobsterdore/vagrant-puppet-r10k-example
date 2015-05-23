@@ -7,6 +7,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell",
     inline: "
+        export FACTER_vagrant=1;
         FQDN=`hostname --fqdn`;
         mkdir -p /etc/openvpn/keys;
         cp /root/openvpn/key-store/ca.crt /etc/openvpn/keys/;
